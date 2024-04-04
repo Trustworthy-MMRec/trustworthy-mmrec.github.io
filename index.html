@@ -157,6 +157,13 @@
 
 <br>
 <h4 class="title is-4">基于自适应模态平衡的鲁棒多媒体推荐方法</h4>
+<p>多媒体推荐系统通常会引入物品的多模态信息作为模型输入的一部分，然而实际测试发现这些多模态特征上添加微小对抗扰动就会导致模型性能严重下降，在实际场景中对于推荐结果的可靠性和平台的安全性造成巨大威胁。我们的目标是设计有效的对抗防御方法以增强多媒体推荐模型的对抗鲁棒性。</p>
+<p>解决思路：</p><br>
+  <ul>
+    <li>对主流多媒体推荐模型进行对抗攻击测试</li>
+    <li>分析这些模型对抗脆弱性原因</li>
+    <li>设计通用的对抗鲁棒性增强方法</li>
+</ul>
 <!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
@@ -166,28 +173,33 @@
         <!-- Your image here -->
         <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          对抗攻击下五个主流多模态推荐模型性能变化示意图
+          <br>结论：当前主流的多模态推荐模型的平均性能普遍下降为原来的一半左右，表现出严重对抗脆弱性
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
+          对抗攻击下各模态用户--物品偏好分数变化示意图
+          <br>结论：多媒体推荐模型对抗鲁棒性差的原因在于存在敏感模态（如视觉模态），其受到对抗攻击后使得用户偏好预测分数严重下降，导致推荐列表被打乱
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-         Third image description.
+         基于模态平衡的通用对抗防御框架示意图
+          <br>核心思想：增强鲁棒模态对最终偏好预测分数的影响，弥补敏感模态脆弱性
+          <br>实现过程：（1）自动识别敏感模态，通过比较各模态分别面对特征扰动的预测分数变化实现（2）设计正则项实现自适应模态平衡
        </h2>
      </div>
      <div class="item">
       <!-- Your image here -->
       <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered">
-        Fourth image description.
+        为实现自适应模态平衡设计的正则项示意图
+        <br>优化目标：扩大鲁棒模态偏好预测分数优势，使其与敏感模态的分数短板相抵
       </h2>
     </div>
   </div>
