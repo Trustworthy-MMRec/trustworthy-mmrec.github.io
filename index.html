@@ -146,8 +146,8 @@
         <div class="content has-text-justified">
           <p>
             &emsp;&emsp;在当下信息爆炸的时代，我们需要信息过滤技术来帮助用户找到符合需求的信息，推荐系统是其中的一项核心技术，它可以根据用户兴趣为用户提供个性化产品与服务，从而缓解信息过载问题。随着信息技术的发展，当下以电商和短视频平台为代表的在线服务平台得到广泛普及，用户在线交互的内容普遍以多媒体形式呈现，当前面向多媒体内容的推荐系统已成为重要的研究热点，然而在过去很长一段时间内整个推荐系统领域研究一直以准确性为导向，在推荐精度取得进步的同时却涌现出了一系列其他问题，如推荐结果难解释，网络环境中充斥着恶意攻击和虚假信息。这引发了对新的推荐系统范式的迫切需求，即负责任、可信赖的推荐系统，它要求推荐系统需具备鲁棒性、公平性、可解释性等性质。
-<br>&emsp;&emsp;为解决这些现实挑战，本项目聚焦于构建<span style="color: red;">多媒体场景下的可信推荐系统</span>多媒体场景下的可信推荐系统，我们从多媒体推荐算法的工作流程入手分析其可信性弱点：在数据准备阶段，多媒体数据的内容容易受对抗扰动影响，从而影响推荐模型的鲁棒性；在模型训练阶段，多媒体内容模态分布不均会导致模型训练有偏，带来推荐结果不公平问题；在推荐生成阶段，由于用户与多媒体内容之间具有复杂的交互模式，使得捕捉用户兴趣更为困难，同时也让推荐结果更难解释。
-<br>&emsp;&emsp;本项目的研究内容即主要围绕着这三方面的问题与挑战展开。我们的目标是加强目前五种主流多媒体推荐算法的多维度可信性。在多媒体场景下的可信推荐系统<span style="color: red;">鲁棒性</span>方面，我们设计了基于自适应模态平衡的鲁棒多媒体推荐方法；在<span style="color: red;">公平性</span>方面，我们设计了基于因果模态纠偏的公平多媒体推荐方法；在<span style="color: red;">可解释性</span>方面，我们设计了基于大语言模型对齐的可解释多媒体推荐方法。通过将上述各部分算法集成开发了一个<span style="color: red;">多维度综合性可信多媒体推荐系统</span>。这一研究具有新场景、新导向的特点，我们在两个典型的亚马逊电商推荐数据集上进行各部分算法效果验证，实验结果表明在各个可信维度上我们的算法相比于已有方法均取得了效果提升。我们希望以本项目为出发点，构建现实场景下的综合全面的可信多媒体推荐系统，让推荐系统更好地服务社会。
+<br>&emsp;&emsp;为解决这些现实挑战，本项目聚焦于构建<span style="color: red;">多媒体场景下的可信推荐系统</span>，我们从多媒体推荐算法的工作流程入手分析其可信性弱点：在数据准备阶段，多媒体数据的内容容易受对抗扰动影响，从而影响推荐模型的鲁棒性；在模型训练阶段，多媒体内容模态分布不均会导致模型训练有偏，带来推荐结果不公平问题；在推荐生成阶段，由于用户与多媒体内容之间具有复杂的交互模式，使得捕捉用户兴趣更为困难，同时也让推荐结果更难解释。
+<br>&emsp;&emsp;本项目的研究内容即主要围绕着这三方面的问题与挑战展开。我们的目标是加强目前五种主流多媒体推荐算法的多维度可信性。在多媒体场景下的可信推荐系统<span style="color: red;">鲁棒性</span>方面，我们设计了基于自适应模态平衡的鲁棒多媒体推荐方法；在<span style="color: red;">公平性</span>方面，我们设计了基于因果模态纠偏的公平多媒体推荐方法；在<span style="color: red;">可解释性</span>方面，我们设计了基于大语言模型对齐的可解释多媒体推荐方法。通过将上述各部分算法集成开发了一个多维度综合性可信多媒体推荐系统。这一研究具有新场景、新导向的特点，我们在两个典型的亚马逊电商推荐数据集上进行各部分算法效果验证，实验结果表明在各个可信维度上我们的算法相比于已有方法均取得了效果提升。我们希望以本项目为出发点，构建现实场景下的综合全面的可信多媒体推荐系统，让推荐系统更好地服务社会。
           </p>
         </div>
       </div>
@@ -172,8 +172,9 @@
 </div>
 </div>
 </div>
+<br>
 <div class="content has-text-justified">
-<img class="columns is-centered has-text-centered" src="./static/images/challenge.png" alt="Teaser" width="50%" style="margin:0 auto">
+<img class="columns is-centered has-text-centered" src="./static/images/challenge.png" alt="Teaser" width="40%" style="margin:0 auto">
 </div>
 <br>
   
@@ -232,6 +233,38 @@
           基于模态平衡的通用对抗防御框架示意图
           <br>核心思想：增强鲁棒模态对最终偏好预测分数的影响，弥补敏感模态脆弱性
           <br>实现过程：（1）自动识别敏感模态，通过比较各模态分别面对特征扰动的预测分数变化实现（2）设计正则项实现自适应模态平衡
+        </font>
+    </p>
+</figcaption>
+<br>
+
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+<h5 class="title is-5">鲁棒性增强对比实验</h5>
+</div>
+</div>
+  
+<div class="content has-text-justified">
+<img class="columns is-centered has-text-centered" src="./static/images/robustness_exp1.png" alt="Teaser" width="50%" style="margin:0 auto">
+<br>
+<figcaption>
+    <p style="text-align: center;">
+        <font color="061E61">
+          Baby数据集上正常输入和对抗攻击场景下算法效果对比
+          <br>防御效果在Recall@10上提高了21.01%，在Recall@20上提高了17.82%，在NDCG@10上提高了17.71%，在NDCG@20上提高了15.45%
+        </font>
+    </p>
+</figcaption>
+<br>
+
+<div class="content has-text-justified">
+<img class="columns is-centered has-text-centered" src="./static/images/robustness_exp2.png" alt="Teaser" width="50%" style="margin:0 auto">
+<br>
+<figcaption>
+    <p style="text-align: center;">
+        <font color="061E61">
+          Clothing数据集上正常输入和对抗攻击场景下算法效果对比
+          <br>防御效果在Recall@10上提高了9.38%，在Recall@20上提高了8.97%，在NDCG@10上提高了8.89%，在NDCG@20上提高了9.01%
         </font>
     </p>
 </figcaption>
