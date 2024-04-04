@@ -278,7 +278,97 @@
 
 <div class="columns is-centered has-text-centered">
 <div class="column is-four-fifths">
-<h5 class="title is-5">公平性提升效果验证</h5>
+<h5 class="title is-5">公平性增强方法设计</h5>
+</div>
+</div>
+  
+<div class="content has-text-justified">
+<img class="columns is-centered has-text-centered" src="./static/images/fairness_graph.png" alt="Teaser" width="50%" style="margin:0 auto">
+<br>
+<figcaption>
+    <p style="text-align: center;">
+        <font color="061E61">
+          多媒体推荐算法因果图
+          <br>传统推荐因果图：单模态特征对推荐结果的影响是通过影响物品特征间接实现的（S→I→Y）
+          <br>考虑模态偏差后：存在一条单模态特征直接影响预测的通路，代表预测结果直接受单模态特征影响
+        </font>
+    </p>
+</figcaption>
+<br>
+<div class="content has-text-justified">
+<img class="columns is-centered has-text-centered" src="./static/images/fairness_counter.png" alt="Teaser" width="35%" style="margin:0 auto">
+<br>
+<figcaption>
+    <p style="text-align: center;">
+        <font color="061E61">
+          反事实推断消除模态偏差示意图
+          <br>真实场景：模型的预测由两部分组成：基于模态融合特征的预测和基于单模态特征的预测
+          <br>反事实场景：只保留单模态信息直接影响预测结果的通路（S→Y），此时得到的预测结果表示单模态偏差
+          <br>去偏差：真实预测分数减去单模态偏差预测分数消除其影响
+        </font>
+    </p>
+</figcaption>
+<br>
+
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+<h5 class="title is-5">公平性增强对比实验</h5>
+</div>
+</div>
+  
+<div class="content has-text-justified">
+<img class="columns is-centered has-text-centered" src="./static/images/fairness_ab.png" alt="Teaser" width="50%" style="margin:0 auto">
+<br>
+<figcaption>
+    <p style="text-align: center;">
+        <font color="061E61">
+          经过模态去偏，不同模态内容组别之间的推荐频率分布变得更加均匀（黄→蓝），证明我们的方法可以有效消除模态偏差问题，提升最终推荐公平性
+        </font>
+    </p>
+</figcaption>
+<br>
+
+<div class="container is-max-desktop">
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+    <h4 class="title is-4">模块三：基于大语言模型对齐的可解释多媒体推荐方法</h4>
+    <div class="content has-text-justified">
+      <p>
+当前多媒体推荐系统多数基于表征学习进行，缺乏充分的可解释性，只能被当作“黑盒”模型进行用户偏好预测，而其中的推荐逻辑对用户而言并不可知，导致用户对推荐系统和多媒体服务平台的信任度降低，也损害了平台的发展与利益。       
+<br><br>解决思路：
+</p>
+  <ul>
+    <li>将大语言模型与训练好的推荐模型进行对齐</li>
+    <li>设计提示模板利用大语言模型获得易于人类理解的推荐解释</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<br>
+
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+<h5 class="title is-5">大语言模型与推荐模型的对齐</h5>
+</div>
+</div>
+  
+<div class="content has-text-justified">
+<img class="columns is-centered has-text-centered" src="./static/images/fairness_issue.png" alt="Teaser" width="50%" style="margin:0 auto">
+<br>
+<figcaption>
+    <p style="text-align: center;">
+        <font color="061E61">
+        例如在视频推荐场景中，训练数据中音频内容可能呈现出长尾分布特点，某个背景音乐在用户交互记录中高频出现，
+          <br>训练得到的模型会倾向于认为包含此类音乐的视频都会被用户喜欢，导致此类视频被过度推荐，影响推荐公平性
+        </font>
+    </p>
+</figcaption>
+<br>
+
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+<h5 class="title is-5">可解释性提升效果验证</h5>
 </div>
 </div>
   
