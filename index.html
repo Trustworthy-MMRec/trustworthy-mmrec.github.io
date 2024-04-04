@@ -220,31 +220,17 @@
 
 <div class="columns is-centered has-text-centered">
 <div class="column is-four-fifths">
-<h5 class="title is-5">鲁棒性增强对比实验</h5>
+<h5 class="title is-5">鲁棒性提升效果验证</h5>
 </div>
 </div>
   
 <div class="content has-text-justified">
-<img class="columns is-centered has-text-centered" src="./static/images/robustness_exp1.png" alt="Teaser" width="60%" style="margin:0 auto">
+<img class="columns is-centered has-text-centered" src="./static/images/robustness_ab.png" alt="Teaser" width="60%" style="margin:0 auto">
 <br>
 <figcaption>
     <p style="text-align: center;">
         <font color="061E61">
-          Baby数据集上正常输入和对抗攻击场景下算法效果对比
-          <br>防御效果在Recall@10上提高了21.01%，在Recall@20上提高了17.82%，在NDCG@10上提高了17.71%，在NDCG@20上提高了15.45%
-        </font>
-    </p>
-</figcaption>
-<br>
-
-<div class="content has-text-justified">
-<img class="columns is-centered has-text-centered" src="./static/images/robustness_exp2.png" alt="Teaser" width="60%" style="margin:0 auto">
-<br>
-<figcaption>
-    <p style="text-align: center;">
-        <font color="061E61">
-          Clothing数据集上正常输入和对抗攻击场景下算法效果对比
-          <br>防御效果在Recall@10上提高了9.38%，在Recall@20上提高了8.97%，在NDCG@10上提高了8.89%，在NDCG@20上提高了9.01%
+          在不同攻击强度下防御效果对比，我们的方法在各攻击设置下均取得最优推荐效果（对模型鲁棒性增益最大）
         </font>
     </p>
 </figcaption>
@@ -290,7 +276,7 @@
 
 <div class="columns is-centered has-text-centered">
 <div class="column is-four-fifths">
-<h5 class="title is-5">公平性增强方法设计</h5>
+<h5 class="title is-5">公平性提升效果验证</h5>
 </div>
 </div>
   
@@ -302,21 +288,21 @@
         <font color="061E61">
           多媒体推荐算法因果图
           <br>传统推荐因果图：单模态特征对推荐结果的影响是通过影响物品特征间接实现的（S→I→Y）
-          <br>考虑模态偏差后：存在一条单模态特征直接影响预测的通路，代表预测结果直接受单模态特征影响（模态偏差作用通路）
+          <br>考虑模态偏差后：存在一条单模态特征直接影响预测的通路，代表预测结果直接受单模态特征影响
         </font>
     </p>
 </figcaption>
 <br>
 <div class="content has-text-justified">
-<img class="columns is-centered has-text-centered" src="./static/images/fairness_graph.png" alt="Teaser" width="50%" style="margin:0 auto">
+<img class="columns is-centered has-text-centered" src="./static/images/fairness_counter.png" alt="Teaser" width="40%" style="margin:0 auto">
 <br>
 <figcaption>
     <p style="text-align: center;">
         <font color="061E61">
           反事实推断消除模态偏差示意图
           <br>真实场景：模型的预测由两部分组成：基于模态融合特征的预测和基于单模态特征的预测
-          <br>反事实场景：切断单模态信息对物品融合特征的影响通路（S→I），只保留单模态信息直接影响预测结果的通路（S→Y），此时得到的预测结果表示单模态偏差
-          <br>去偏差：真实预测分数减去单模态偏差预测分数，从而消除其影响
+          <br>反事实场景：只保留单模态信息直接影响预测结果的通路（S→Y），此时得到的预测结果表示单模态偏差
+          <br>去偏差：真实预测分数减去单模态偏差预测分数消除其影响
         </font>
     </p>
 </figcaption>
@@ -329,30 +315,17 @@
 </div>
   
 <div class="content has-text-justified">
-<img class="columns is-centered has-text-centered" src="./static/images/fairness_counter.png" alt="Teaser" width="60%" style="margin:0 auto">
+<img class="columns is-centered has-text-centered" src="./static/images/fairness_ab.png" alt="Teaser" width="60%" style="margin:0 auto">
 <br>
 <figcaption>
     <p style="text-align: center;">
         <font color="061E61">
-          Baby数据集上正常输入和对抗攻击场景下算法效果对比
-          <br>防御效果在Recall@10上提高了21.01%，在Recall@20上提高了17.82%，在NDCG@10上提高了17.71%，在NDCG@20上提高了15.45%
+          经过模态去偏，不同模态内容组别之间的推荐频率分布变得更加均匀，证明我们的方法可以有效消除模态偏差问题，提升最终推荐列表中的物品分布公平性。
         </font>
     </p>
 </figcaption>
 <br>
 
-<div class="content has-text-justified">
-<img class="columns is-centered has-text-centered" src="./static/images/robustness_exp2.png" alt="Teaser" width="60%" style="margin:0 auto">
-<br>
-<figcaption>
-    <p style="text-align: center;">
-        <font color="061E61">
-          Clothing数据集上正常输入和对抗攻击场景下算法效果对比
-          <br>防御效果在Recall@10上提高了9.38%，在Recall@20上提高了8.97%，在NDCG@10上提高了8.89%，在NDCG@20上提高了9.01%
-        </font>
-    </p>
-</figcaption>
-<br>
   
 
 
