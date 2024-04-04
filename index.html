@@ -176,7 +176,7 @@
 <br>
 
 <div class="content has-text-justified">
-<img class="columns is-centered has-text-centered" src="./static/images/attack.png" alt="Teaser" width="50%" style="margin:0 auto">
+<img class="columns is-centered has-text-centered" src="./static/images/attack.png" alt="Teaser" width="60%" style="margin:0 auto">
 <br>
 <figcaption>
     <p style="text-align: center;">
@@ -188,143 +188,24 @@
     </p>
 </figcaption>
 <br>
-  
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT" width="50%">
-        <figcaption>
-        <p style="text-align: center;">
-            <font color="061E61">
-               对抗攻击下五个主流多模态推荐模型性能变化示意图
-          <br>结论：当前主流的多模态推荐模型的平均性能普遍下降为原来的一半左右，表现出严重对抗脆弱性
-            </font>
-        </p>
-    </figcaption>
-          对抗攻击下五个主流多模态推荐模型性能变化示意图
-          结论：当前主流的多模态推荐模型的平均性能普遍下降为原来的一半左右，表现出严重对抗脆弱性
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          对抗攻击下各模态用户--物品偏好分数变化示意图
-          <br>结论：多媒体推荐模型对抗鲁棒性差的原因在于存在敏感模态（如视觉模态），其受到对抗攻击后使得用户偏好预测分数严重下降，导致推荐列表被打乱
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         基于模态平衡的通用对抗防御框架示意图
+
+<div class="content has-text-justified">
+<img class="columns is-centered has-text-centered" src="./static/images/robustness.png" alt="Teaser" width="60%" style="margin:0 auto">
+<br>
+<figcaption>
+    <p style="text-align: center;">
+        <font color="061E61">
+          基于模态平衡的通用对抗防御框架示意图
           <br>核心思想：增强鲁棒模态对最终偏好预测分数的影响，弥补敏感模态脆弱性
           <br>实现过程：（1）自动识别敏感模态，通过比较各模态分别面对特征扰动的预测分数变化实现（2）设计正则项实现自适应模态平衡
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        为实现自适应模态平衡设计的正则项示意图
-        <br>优化目标：扩大鲁棒模态偏好预测分数优势，使其与敏感模态的分数短板相抵
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
+        </font>
+    </p>
+</figcaption>
+<br>
+  
 
 
 
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
 
 
   <footer class="footer">
