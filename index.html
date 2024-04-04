@@ -249,6 +249,110 @@
     </p>
 </figcaption>
 <br>
+
+<div class="container is-max-desktop">
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+    <h4 class="title is-4">模块二：基于因果模态纠偏的公平多媒体推荐方法</h4>
+    <div class="content has-text-justified">
+      <p>
+多媒体推荐系统在将多模态特征融入模型学习的同时会自然引入偏差，由于训练数据中的模态分布一般不是均匀的，模型会对其中某些单模态特征产生过拟合并高度依赖其进行预测，导致对部分商品进行过度推荐，我们的目标是消除这种模态偏差影响，提升物品在整体用户推荐列表分布的均衡性。 
+        <br><br>解决思路：
+</p>
+  <ul>
+    <li>多媒体推荐场景不公平原因分析（模态偏差影响）</li>
+    <li>多媒体推荐算法因果图构建</li>
+    <li>利用反事实推断消除模态偏差，提升公平性</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<br>
+
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+<h5 class="title is-5">多媒体推荐场景模态偏差影响分析</h5>
+</div>
+</div>
+  
+<div class="content has-text-justified">
+<img class="columns is-centered has-text-centered" src="./static/images/fairness_issue.png" alt="Teaser" width="50%" style="margin:0 auto">
+<br>
+<figcaption>
+    <p style="text-align: center;">
+        <font color="061E61">
+        例如在视频推荐场景中，训练数据中音频内容可能呈现出长尾分布特点，某个背景音乐在用户交互记录中高频出现，训练得到的模型会倾向于认为包含此类音乐的视频都会被用户喜欢，导致此类视频被过度推荐，影响推荐公平性
+        </font>
+    </p>
+</figcaption>
+<br>
+
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+<h5 class="title is-5">公平性增强方法设计</h5>
+</div>
+</div>
+  
+<div class="content has-text-justified">
+<img class="columns is-centered has-text-centered" src="./static/images/fairness_graph.png" alt="Teaser" width="50%" style="margin:0 auto">
+<br>
+<figcaption>
+    <p style="text-align: center;">
+        <font color="061E61">
+          多媒体推荐算法因果图
+          <br>传统推荐因果图：单模态特征对推荐结果的影响是通过影响物品特征间接实现的（S→I→Y）
+          <br>考虑模态偏差后：存在一条单模态特征直接影响预测的通路，代表预测结果直接受单模态特征影响（模态偏差作用通路）
+        </font>
+    </p>
+</figcaption>
+<br>
+<div class="content has-text-justified">
+<img class="columns is-centered has-text-centered" src="./static/images/fairness_graph.png" alt="Teaser" width="50%" style="margin:0 auto">
+<br>
+<figcaption>
+    <p style="text-align: center;">
+        <font color="061E61">
+          反事实推断消除模态偏差示意图
+          <br>真实场景：模型的预测由两部分组成：基于模态融合特征的预测和基于单模态特征的预测
+          <br>反事实场景：切断单模态信息对物品融合特征的影响通路（S→I），只保留单模态信息直接影响预测结果的通路（S→Y），此时得到的预测结果表示单模态偏差
+          <br>去偏差：真实预测分数减去单模态偏差预测分数，从而消除其影响
+        </font>
+    </p>
+</figcaption>
+<br>
+
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+<h5 class="title is-5">公平性增强对比实验</h5>
+</div>
+</div>
+  
+<div class="content has-text-justified">
+<img class="columns is-centered has-text-centered" src="./static/images/fairness_counter.png" alt="Teaser" width="60%" style="margin:0 auto">
+<br>
+<figcaption>
+    <p style="text-align: center;">
+        <font color="061E61">
+          Baby数据集上正常输入和对抗攻击场景下算法效果对比
+          <br>防御效果在Recall@10上提高了21.01%，在Recall@20上提高了17.82%，在NDCG@10上提高了17.71%，在NDCG@20上提高了15.45%
+        </font>
+    </p>
+</figcaption>
+<br>
+
+<div class="content has-text-justified">
+<img class="columns is-centered has-text-centered" src="./static/images/robustness_exp2.png" alt="Teaser" width="60%" style="margin:0 auto">
+<br>
+<figcaption>
+    <p style="text-align: center;">
+        <font color="061E61">
+          Clothing数据集上正常输入和对抗攻击场景下算法效果对比
+          <br>防御效果在Recall@10上提高了9.38%，在Recall@20上提高了8.97%，在NDCG@10上提高了8.89%，在NDCG@20上提高了9.01%
+        </font>
+    </p>
+</figcaption>
+<br>
   
 
 
