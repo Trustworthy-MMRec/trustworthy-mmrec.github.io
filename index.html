@@ -354,13 +354,12 @@
 </div>
   
 <div class="content has-text-justified">
-<img class="columns is-centered has-text-centered" src="./static/images/fairness_issue.png" alt="Teaser" width="50%" style="margin:0 auto">
+<img class="columns is-centered has-text-centered" src="./static/images/explain_framework.png" alt="Teaser" width="50%" style="margin:0 auto">
 <br>
 <figcaption>
     <p style="text-align: center;">
         <font color="061E61">
-        例如在视频推荐场景中，训练数据中音频内容可能呈现出长尾分布特点，某个背景音乐在用户交互记录中高频出现，
-          <br>训练得到的模型会倾向于认为包含此类音乐的视频都会被用户喜欢，导致此类视频被过度推荐，影响推荐公平性
+        设计三种对齐任务对大语言模型进行微调，使其对用户偏好和行为的预测与推荐模型保持一致
         </font>
     </p>
 </figcaption>
@@ -373,50 +372,78 @@
 </div>
   
 <div class="content has-text-justified">
-<img class="columns is-centered has-text-centered" src="./static/images/fairness_graph.png" alt="Teaser" width="50%" style="margin:0 auto">
-<br>
-<figcaption>
-    <p style="text-align: center;">
-        <font color="061E61">
-          多媒体推荐算法因果图
-          <br>传统推荐因果图：单模态特征对推荐结果的影响是通过影响物品特征间接实现的（S→I→Y）
-          <br>考虑模态偏差后：存在一条单模态特征直接影响预测的通路，代表预测结果直接受单模态特征影响
-        </font>
-    </p>
-</figcaption>
-<br>
-<div class="content has-text-justified">
-<img class="columns is-centered has-text-centered" src="./static/images/fairness_counter.png" alt="Teaser" width="35%" style="margin:0 auto">
-<br>
-<figcaption>
-    <p style="text-align: center;">
-        <font color="061E61">
-          反事实推断消除模态偏差示意图
-          <br>真实场景：模型的预测由两部分组成：基于模态融合特征的预测和基于单模态特征的预测
-          <br>反事实场景：只保留单模态信息直接影响预测结果的通路（S→Y），此时得到的预测结果表示单模态偏差
-          <br>去偏差：真实预测分数减去单模态偏差预测分数消除其影响
-        </font>
-    </p>
-</figcaption>
+
+<div class="wrapper svelte-nab2ao" style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
+
+    <div class="message-wrap svelte-1uvwjgr" style="width: 100%;">
+
+        <div class="message-row user-row svelte-1uvwjgr">
+            <div class="avatar-container svelte-1uvwjgr">
+                <img class="avatar-image svelte-1uvwjgr" src="./static/images/working.png" alt="avatar-user">
+            </div>
+            <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                <span class="md svelte-9tftx4 chatbot">
+                    <p>You are a helpful assistant. The user has the following purchase history: ['Black Large Vicky Giraffe Print Faux Leather Satchel Bag Handbag Purse', 'Underworks Mens Compression Body Shirt Girdle Gynecomastia Shirt', 'LACY 14K GOLD on 925 Silver Charm BEAD compatible with European Bracelet', 'Travel Neck Pouch - Silk Jacquard', 'Underworks Mens Extreme Gynecomastia Chest Binder V-Tank Top', 'Black Beaded Harem Girl Belly Dancer Egyptian Costume Headpiece', '.925 Sterling Silver Enamel Christmas Rudolph Reindeer Deer Red Nose Bead For European Charm Bracelets’]. Will the user like the item: "Oryer Retro Vintage Lady Woman PU leather Shoulder Purse Handbag Totes Bag Satchel"? Please give your answer and explain why you make this decision from the perspective of a recommendation model. Your explanation should include the following aspects: summary of patterns and traits from user purchase history, the consistency or inconsistency between user preferences and the item.
+                    </p>
+                </span>
+            </div>
+        </div>
+
+        <div class="message-row bot-row svelte-1uvwjgr">
+            <div class="avatar-container svelte-1uvwjgr">
+                <img class="avatar-image svelte-1uvwjgr" src="./static/images/robot.png" alt="avatar-bot"></div>
+            <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                <span class="md svelte-9tftx4 chatbot">
+                  <p>Based on the user's purchase history, which includes items such as handbags, compression shirts, jewelry, travel accessories, and costume pieces, it seems they have a diverse range of interests across fashion, accessories, and practical items. They seem to <span style="color: red;">prefer a mix of functional and stylish items, with a touch of uniqueness or novelty.</span>
+<br>In this context, the item 'Oryer Retro Vintage Lady Woman PU leather Shoulder Purse Handbag Totes Bag Satchel' <span style="color: red;">aligns well with the user's past purchases of handbags and purses.</span> The vintage style and PU leather material match the giraffe print faux leather satchel bag and the silk jacquard neck pouch in terms of style and material. <span style="color: red;">The item also fits with the user's interest in unique and standout pieces</span>, as indicated by the belly dancer costume headpiece and the enamel Christmas charm bead.
+<br>Therefore, the user <span style="color: red;">is likely to like</span> the 'Oryer Retro Vintage Lady Woman PU leather Shoulder Purse Handbag Totes Bag Satchel' based on the patterns and traits observed in their purchase history..
+
+                  </p>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 <br>
 
-<div class="columns is-centered has-text-centered">
-<div class="column is-four-fifths">
-<h5 class="title is-5">公平性增强对比实验</h5>
-</div>
-</div>
   
 <div class="content has-text-justified">
-<img class="columns is-centered has-text-centered" src="./static/images/fairness_ab.png" alt="Teaser" width="50%" style="margin:0 auto">
-<br>
-<figcaption>
-    <p style="text-align: center;">
-        <font color="061E61">
-          经过模态去偏，不同模态内容组别之间的推荐频率分布变得更加均匀（黄→蓝），证明我们的方法可以有效消除模态偏差问题，提升最终推荐公平性。
-        </font>
-    </p>
-</figcaption>
-<br>
+
+<div class="wrapper svelte-nab2ao" style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
+
+    <div class="message-wrap svelte-1uvwjgr" style="width: 100%;">
+
+        <div class="message-row user-row svelte-1uvwjgr">
+            <div class="avatar-container svelte-1uvwjgr">
+                <img class="avatar-image svelte-1uvwjgr" src="./static/images/working.png" alt="avatar-user">
+            </div>
+            <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                <span class="md svelte-9tftx4 chatbot">
+                    <p>You are a helpful assistant. The user has the following purchase history: ['American Flag Embroidered Patch White Border United States Iron-On Military', 'Genuine Leather USA Flag Fanny Pack, Stars &amp; Stripes Waist Bag or Belt Bag. Great for Travel or Everyday Use', 'Womens spike stud lace up high block chunky heel platform shoes booties boots', 'Allegra K Women Fashion Long Sleeve Single Breasted Uneven Hem Loose Blouse', 'Retro 50s Vintage High Waist Bikini’]. Will the user like the item: "Zeagoo Women's Autumn and Winter Fur Vest Fastener Satin Liner Vest"? Please give your answer and explain why you make this decision from the perspective of a recommendation model. Your explanation should include the following aspects: summary of patterns and traits from user purchase history, the consistency or inconsistency between user preferences and the item.
+                    </p>
+                </span>
+            </div>
+        </div>
+
+        <div class="message-row bot-row svelte-1uvwjgr">
+            <div class="avatar-container svelte-1uvwjgr">
+                <img class="avatar-image svelte-1uvwjgr" src="./static/images/robot.png" alt="avatar-bot"></div>
+            <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                <span class="md svelte-9tftx4 chatbot">
+                  <p>Based on the user's purchase history, it seems that the user <span style="color: red;">prefers items that are patriotic, fashionable, and stylish</span>. The user has purchased products like an American flag patch, a USA flag fanny pack, trendy shoes, fashionable blouses, and a retro high-waist bikini. These items suggest that the user has a preference for patriotic and stylish clothing and accessories.
+<br>Considering the user's purchase history, the 'Zeagoo Women's Autumn and Winter Fur Vest Fastener Satin Liner Vest' may not align well with the user's preferences. The fur vest <span style="color: red;">may not match the user's previous purchases, as it has a different style compared to the more modern, trendy items the user has bought in the past</span>. Additionally, the fur vest may not reflect the patriotic theme that some of the user's purchases have centered around.
+<br>Therefore, based on the user's purchasing patterns and preferences, <span style="color: red;">it is unlikely that the user will like</span> the 'Zeagoo Women's Autumn and Winter Fur Vest Fastener Satin Liner Vest' as it deviates from their usual style and interests.
+
+
+                  </p>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 
   
 
