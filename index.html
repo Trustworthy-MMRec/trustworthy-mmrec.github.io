@@ -264,13 +264,12 @@
 </div>
   
 <div class="content has-text-justified">
-<img class="columns is-centered has-text-centered" src="./static/images/fairness_issue.png" alt="Teaser" width="50%" style="margin:0 auto">
+<img class="columns is-centered has-text-centered" src="./static/images/fairness_issue.png" alt="Teaser" width="40%" style="margin:0 auto">
 <br>
 <figcaption>
     <p style="text-align: center;">
         <font color="061E61">
-        例如在视频推荐场景中，训练数据中音频内容可能呈现出长尾分布特点，某个背景音乐在用户交互记录中高频出现，
-          <br>训练得到的模型会倾向于认为包含此类音乐的视频都会被用户喜欢，导致此类视频被过度推荐，影响推荐公平性
+        多媒体推荐场景中训练数据模态偏差导致推荐不公平示意图
         </font>
     </p>
 </figcaption>
@@ -304,7 +303,6 @@
           反事实推断消除模态偏差示意图
           <br>真实场景：模型的预测由两部分组成：基于模态融合特征的预测和基于单模态特征的预测
           <br>反事实场景：只保留单模态信息直接影响预测结果的通路（S→Y），此时得到的预测结果表示单模态偏差
-          <br>去偏差：真实预测分数减去单模态偏差预测分数消除其影响
         </font>
     </p>
 </figcaption>
